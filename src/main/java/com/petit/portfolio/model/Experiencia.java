@@ -25,7 +25,8 @@ public class Experiencia {
     private Integer Id;
     private String lugar;
      private String año;
-
+     private String actividad;
+     
      @ManyToOne()
     @JoinColumn(name = "persona_id")
     @JsonBackReference
@@ -67,5 +68,22 @@ public class Experiencia {
      */
     public void setAño(String año) {
         this.año = año;
+    }   
+
+    public Integer getId() {
+        return Id;
     }
+
+    public void setId(Integer Id) {
+        this.Id = Id;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
+    
 }
