@@ -6,6 +6,8 @@ import com.petit.portfolio.model.Experiencia;
 import com.petit.portfolio.model.Lenguages;
 import com.petit.portfolio.model.Persona;
 import com.petit.portfolio.repository.EducacionRepository;
+import com.petit.portfolio.repository.ExperienciaRepository;
+import com.petit.portfolio.repository.LenguagesRepository;
 import com.petit.portfolio.repository.PersonaRepository;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +33,9 @@ public class Portfoliocontroller {
     
     @Autowired 
     private PersonaRepository personaRepository;
-    
-  
-    
+    private EducacionRepository educacionRepository;
+    private ExperienciaRepository experienciaRepository;
+    private LenguagesRepository lenguagesRepository;
     
     
     @GetMapping("/persona")
@@ -193,6 +195,23 @@ public class Portfoliocontroller {
   }
   
   
+    @GetMapping("/educacion")
+    public @ResponseBody Iterable<Educacion> educacion () {
+       return educacionRepository.findAll();
+      }
+  
+  
+   @GetMapping("/experiencia")
+    public @ResponseBody Iterable<Experiencia> experiencia () {
+       return experienciaRepository.findAll();
+      }
+  
+     @GetMapping("/lenguages")
+    public @ResponseBody Iterable<Lenguages> lenguages () {
+       return lenguagesRepository.findAll();
+      }
+    
+    
  /**   @GetMapping("/educacion")
     public String educacion () {
     //    ArrayList <Educacion> educaciones = new ArrayList<>();
